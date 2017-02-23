@@ -1,11 +1,4 @@
-# NodeJS_Study
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title>Document</title>
-</head>
-<body>
-	
-</body>
-</html>
+学习NodeJS之路
+=========
+一,准备工作:
+---------
