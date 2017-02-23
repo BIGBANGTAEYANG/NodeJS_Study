@@ -8,12 +8,13 @@
 ######4.验证node以及npm是否安装成功.
 二,NodeJS之HelloWorld:
 ---------
-######1.代码如下:```javascript
+######1.代码如下:
+```javascript
 var http = require('http')
 var server = http.createServer(function(req,res){
 	res.writeHead(200,{'Content-Type':'text/plain'})
 	res.end('Hello World\n')
 })
 server.listen(6666,'127.0.0.1')
-console.log('Server running at http://127.0.0.1:6666/')//javascript
+console.log('Server running at http://127.0.0.1:6666/')
 ```
