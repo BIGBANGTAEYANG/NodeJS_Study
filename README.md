@@ -18,5 +18,4 @@ var server = http.createServer(function(req,res){
 server.listen(6666,'127.0.0.1')
 console.log('Server running at http://127.0.0.1:6666/')
 ```
-######先到这里吧，:stuck_out_tongue_closed_eyes::stuck_out_tongue_closed_eyes:
 ######上面的HelloWorld代码在Git中使用了NodeJS的http模块，使用了require，也用了回调，先熟悉一下这几个，为后面学习打基础，今天先到这里:stuck_out_tongue_closed_eyes::stuck_out_tongue_closed_eyes:
