@@ -109,3 +109,17 @@ exchange.begin(100);
 ######代码【2】的执行结果如下:`{ exchange: [Function] }``{ exchange: [Function] }``true``人民币：100 转===>美元：14.6 汇率是：0.146`
 ######第一个与第二个打印都为exchange: [Function],说明exports和module.exports中都是对外公开的方法，后面是true，两者一致。
 ######总结：从上例子可以知道,exports是module.exports的一个引用,对外公开的总是module.exports,就算直接指定给exports，流程也是exports===>module.exports===>对外，所以直接指定module.exports,那exports中就为空。所以看出exports最好是在需要直接公开函数的时候使用，module是公开对象的时候使用。
+五,对回调的理解
+-------------
+######1.回调的定义:回调函数就是一个通过函数指针调用的函数。如果你把函数的指针（地址）作为参数传递给另一个函数，当这个指针被用来调用其所指向的函数时，我们就说这是回调函数。回调函数不是由该函数的实现方直接调用，而是在特定的事件或条件发生时由另外的一方调用的，用于对该事件或条件进行响应。
+######2.这里给一个菜鸟教程的讲解链接:rocket::rocket:[回调详解](http://www.runoob.com/nodejs/nodejs-callback.html)
+######3.参考链接中的回调例子，看看我的回调案例，代码如下:
+```javascript
+exports.print = function (argument) {
+	function outprint(argument){
+		console.log(argument);
+	}
+	outprint(argument);
+};
+```
+######调用代码就不贴了，详细可以查看GitHub中上传的文件。
