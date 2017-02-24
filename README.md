@@ -56,7 +56,7 @@ var Hello = new hello();
 ######【3】运行main.js,可以看见控制台输出HelloWorld。
 四,exports与module.exports的区别讲解:
 -----------------
-1.exports和module.exports都可以对外提供接口，从下面的代码示例可以看出，区别在创建的模块中，代码书写的方法不同，以及调用模块时，module.exports需要实例化，才可以使用，代码如下:
+######1.exports和module.exports都可以对外提供接口，从前面的示例以及下面的代码可以看出，区别在创建的模块中，代码书写的方法不同，以及调用模块时，module.exports需要实例化，才可以使用，代码如下:
 ```javascript
 var hello = require('./hello');
 hello.world();
@@ -65,4 +65,47 @@ hello.world();
 var hello = require('./hello');
 var Hello = new hello();
 ```
+######2.这里取一个人民币转美元的例子详细说明两者区别，代码如下:
+######【1】exports代码:
+```javascript
+var rate = 0.146;
+exports.exchange = function (PreMoney) {
+	LatMoney = PreMoney*rate;
+	console.log('人民币：'+PreMoney+' 转===>美元：'+LatMoney+' 汇率是：'+rate);
+};
 
+console.log(exports);
+console.log(module.exports);
+console.log(exports===module.exports);
+```
+######测试exports的testExports的代码:
+```javascript
+var change = require('./exportsExchange');
+change.exchange(100);
+```
+######这里写了用控制台打印了exports和module.exports分别是什么以及两个是否一样；
+######代码【1】的执行结果如下:`{}``[Function: exchange]``false``人民币：100 转===>美元：14.6 汇率是：0.146`
+######第一个打印为空，说明exports中为空，第二个打印为Function：exchange,说明module.exports中的是对外公开的方法，所以后面有个false，两者不一致
+######【2】module.exports代码：
+```javascript
+var rate = 0.146;
+module.exports = function exchange(){
+		this.begin = function(PreMoney){
+					LatMoneytwo  = PreMoney*rate;
+					console.log('人民币：'+PreMoney+' 转===>美元：'+LatMoneytwo+' 汇率是：'+rate);
+				}
+};
+
+console.log(exports);
+console.log(module.exports);
+console.log(exports===module.exports);
+```
+######测试代码:
+```javascript
+var change = require('./moduleExchange');
+var exchange = new change();
+exchange.begin(100);
+```
+######代码【2】的执行结果如下:`{ exchange: [Function] }``{ exchange: [Function] }``true``人民币：100 转===>美元：14.6 汇率是：0.146`
+######第一个与第二个打印都为exchange: [Function],说明exports和module.exports中都是对外公开的方法，后面是true，两者一致。
+#####所以这里可以知道,exports是module.exports的一个引用,对外公开的总是module.exports,就算直接指定给exports，流程也是exports===>module.exports===>对外，所以直接指定module.exports,那exports中就为空。
