@@ -108,4 +108,4 @@ exchange.begin(100);
 ```
 ######代码【2】的执行结果如下:`{ exchange: [Function] }``{ exchange: [Function] }``true``人民币：100 转===>美元：14.6 汇率是：0.146`
 ######第一个与第二个打印都为exchange: [Function],说明exports和module.exports中都是对外公开的方法，后面是true，两者一致。
-#####所以这里可以知道,exports是module.exports的一个引用,对外公开的总是module.exports,就算直接指定给exports，流程也是exports===>module.exports===>对外，所以直接指定module.exports,那exports中就为空。
+######总结：从上例子可以知道,exports是module.exports的一个引用,对外公开的总是module.exports,就算直接指定给exports，流程也是exports===>module.exports===>对外，所以直接指定module.exports,那exports中就为空。所以看出exports最好是在需要直接公开函数的时候使用，module是公开对象的时候使用。
