@@ -133,5 +133,5 @@ var simpleEvent  = require('events');
 //实例化eventEmitter对象
 var simpleevent = new simpleEvent.EventEmitter();
 ```
-######3.事件发射器EventEmitter的一个简单的例子及讲解:[简单示例]():rocket::rocket::rocket::rocket:。
-######4.由于页面长度原因，EventEmitter详细介绍看这个:[EventEmitter详细]()。
+######3.事件发射器EventEmitter的一个简单的例子及讲解:[简单示例](https://github.com/BIGBANGTAEYANG/NodeJS_Study/blob/master/Book/EventEmitter/simpleEvent.js):rocket::rocket::rocket::rocket:。
+######4.由于页面长度原因，EventEmitter详细介绍看这个:[EventEmitter详细](https://github.com/BIGBANGTAEYANG/NodeJS_Study/blob/master/Book/EventEmitter.md)。
