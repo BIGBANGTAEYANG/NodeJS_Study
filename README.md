@@ -123,3 +123,15 @@ exports.print = function (argument) {
 };
 ```
 ######调用代码就不贴了，详细可以查看GitHub中上传的文件。
+六,NodeJS之EventEmitter
+--------------
+######1.Node.js 所有的异步 I/O 操作在完成时都会发送一个事件到事件队列。Node.js里面的许多对象都会分发事件：一个net.Server对象会在每次有新连接时分发一个事件， 一个fs.readStream对象会在文件被打开的时候发出一个事件。 所有这些产生事件的对象都是 events.EventEmitter 的实例。
+######2.NodeJS的EventEmitter类:EventEmitter 的核心就是事件触发与事件监听器功能的封装,通过前面讲的require("XXX");来访问该模块。
+```javascript
+//引入events模块
+var simpleEvent  = require('events');
+//实例化eventEmitter对象
+var simpleevent = new simpleEvent.EventEmitter();
+```
+######3.事件发射器EventEmitter的一个简单的例子及讲解:[简单示例]():rocket::rocket::rocket::rocket:。
+######4.由于页面长度原因，EventEmitter详细介绍看这个:[EventEmitter详细]()。
