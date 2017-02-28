@@ -137,4 +137,8 @@ var simpleevent = new simpleEvent.EventEmitter();
 ######4.由于页面长度原因，EventEmitter详细介绍看这个:[EventEmitter详细](https://github.com/BIGBANGTAEYANG/NodeJS_Study/blob/master/Book/EventEmitter/EventEmitter.md):rocket::rocket::rocket::rocket:。
 七,NodeJS之路由
 ----------
-######1.
+######1.路由解释:路由就是客户端请求服务器的时候，将请求拦截，对请求做出判断，不同的请求通过路由分发到不同的服务器，访问不同的资源。路由的作用就是控制请求，对请求做处理，然后再由路由返回给客户端。
+######2.如图:
+![]()
+######这是一个典型的MVC架构，浏览器发送请求，由路由控制接受，根据不同的路径定向到不同的服务器，控制器处理用户具体的请求，可能会访问数据库中的对象，即模型部分，生成视图的HTML，最后再由控制器返回给浏览器，完成一次请求。
+######3.:rocket::rocket::rocket::rocket:[路由详解]()。
