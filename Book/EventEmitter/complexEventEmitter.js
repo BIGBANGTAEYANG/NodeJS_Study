@@ -22,3 +22,4 @@ exports.outprint = function (arg){
 	eventEmitter.emit('print',arg);
 
 }
+
