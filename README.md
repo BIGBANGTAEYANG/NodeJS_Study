@@ -41,7 +41,7 @@ hello.world();
 ```javascript
 var http = require('http')
 ```
-3.在nodejs中除了exports.[function]可以把模块对外公开,还有一种方法也可以,即为module.exports,将上面的exports代码改一下。
+3.在nodejs中除了exports.[function]可以把模块对外公开,还有一种方法也可以,即为module.exports,将上面的exports代码改一下。<br>
 【1】更改hello.js,代码如下:
 ```javascript
 module.exports = function(){
@@ -66,7 +66,7 @@ hello.world();
 var hello = require('./hello');
 var Hello = new hello();
 ```
-2.这里取一个人民币转美元的例子详细说明两者区别，代码如下:
+2.这里取一个人民币转美元的例子详细说明两者区别，代码如下:<br>
 【1】exports代码:
 ```javascript
 var rate = 0.146;
@@ -84,7 +84,7 @@ console.log(exports===module.exports);
 var change = require('./exportsExchange');
 change.exchange(100);
 ```
-这里写了用控制台打印了exports和module.exports分别是什么以及两个是否一样；
+这里写了用控制台打印了exports和module.exports分别是什么以及两个是否一样；<br>
 代码【1】的执行结果如下:`{}``[Function: exchange]``false``人民币：100 转===>美元：14.6 汇率是：0.146`
 第一个打印为空，说明exports中为空，第二个打印为Function：exchange,说明module.exports中的是对外公开的方法，所以后面有个false，两者不一致<br>
 【2】module.exports代码：
@@ -108,7 +108,7 @@ var exchange = new change();
 exchange.begin(100);
 ```
 代码【2】的执行结果如下:`{ exchange: [Function] }``{ exchange: [Function] }``true``人民币：100 转===>美元：14.6 汇率是：0.146`
-第一个与第二个打印都为exchange: [Function],说明exports和module.exports中都是对外公开的方法，后面是true，两者一致。<br>
+第一个与第二个打印都为exchange: [Function],说明exports和module.exports中都是对外公开的方法，后面是true，两者一致。<br><br>
 总结：从上例子可以知道,exports是module.exports的一个引用,对外公开的总是module.exports,就算直接指定给exports，流程也是exports===>module.exports===>对外，所以直接指定module.exports,那exports中就为空。所以看出exports最好是在需要直接公开函数的时候使用，module是公开对象的时候使用。
 
 五,对回调的理解
@@ -129,7 +129,7 @@ exports.print = function (argument) {
 六,NodeJS之EventEmitter
 
 1.Node.js 所有的异步 I/O 操作在完成时都会发送一个事件到事件队列。Node.js里面的许多对象都会分发事件：一个net.Server对象会在每次有新连接时分发一个事件， 一个fs.readStream对象会在文件被打开的时候发出一个事件。 所有这些产生事件的对象都是 events.EventEmitter 的实例。<br>
-2.NodeJS的EventEmitter类:EventEmitter 的核心就是事件触发与事件监听器功能的封装,通过前面讲的require("XXX");来访问该模块。
+2.NodeJS的EventEmitter类:EventEmitter 的核心就是事件触发与事件监听器功能的封装,通过前面讲的require("XXX");来访问该模块。<br>
 ```javascript
 //引入events模块
 var simpleEvent  = require('events');
@@ -142,7 +142,7 @@ var simpleevent = new simpleEvent.EventEmitter();
 七,NodeJS之路由
 
 1.路由解释:路由就是客户端请求服务器的时候，将请求拦截，对请求做出判断，不同的请求通过路由分发到不同的服务器，访问不同的资源。路由的作用就是控制请求，对请求做处理，然后再由路由返回给客户端。<br>
-2.如图:
+2.如图:<br>
 ![Router](https://github.com/BIGBANGTAEYANG/NodeJS_Study/blob/master/Book/Router/router.png)<br>
 这是一个典型的MVC架构，浏览器发送请求，由路由控制接受，根据不同的路径定向到不同的服务器，控制器处理用户具体的请求，可能会访问数据库中的对象，即模型部分，生成视图的HTML，最后再由控制器返回给浏览器，完成一次请求。<br>
 3.:rocket::rocket::rocket::rocket:[路由详解](https://github.com/BIGBANGTAEYANG/NodeJS_Study/blob/master/Book/Router/Router.md)。
