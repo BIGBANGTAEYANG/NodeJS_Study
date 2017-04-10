@@ -146,3 +146,6 @@ var simpleevent = new simpleEvent.EventEmitter();
 ![Router](https://github.com/BIGBANGTAEYANG/NodeJS_Study/blob/master/Book/Router/router.png)<br>
 这是一个典型的MVC架构，浏览器发送请求，由路由控制接受，根据不同的路径定向到不同的服务器，控制器处理用户具体的请求，可能会访问数据库中的对象，即模型部分，生成视图的HTML，最后再由控制器返回给浏览器，完成一次请求。<br>
 3.:rocket::rocket::rocket::rocket:[路由详解](https://github.com/BIGBANGTAEYANG/NodeJS_Study/blob/master/Book/Router/Router.md)。
+
+八,JavaScript部分注意点记录[飞机票](https://github.com/BIGBANGTAEYANG/NodeJS_Study/blob/master/Book/JavaScript%E6%A6%82%E8%BF%B0/JavaScript.md)
+
