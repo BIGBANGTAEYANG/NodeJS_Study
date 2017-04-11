@@ -2,23 +2,9 @@ var fs = require('fs');
 var stdin = process.stdin;
 var stdout = process.stdout;
 var dirname = '.';
-
-stdout.write('输入需要查看的目录路径:');
-stdin.resume();
-stdin.on('data',sin);
-
-function sin(data){
-	if(data==''&&data==null){
-		read(dirname);
-	}else{
-		dirname=String(data);
-		read(dirname);
-	}
-};
+var stats = [];
 
 
-
-function read(dirname){
 	fs.readdir(dirname,function(err,files){
 
 	console.log('当前目录文件显示如下:');
@@ -32,6 +18,7 @@ function read(dirname){
 	function file(i){
 		var filename = files[i];
 		fs.stat(dirname+'/'+filename,function(err,stat){
+			stats[i] = stat;
 			if(stat.isDirectory()){
 				console.log(i+'		文件夹:'+filename);
 			}else{
@@ -60,19 +47,31 @@ function read(dirname){
 	function option(data){
 		var filename = files[Number(data)];
 		if(!filename){
-			stdout.write('请选择你所需要查看的文件');
+			stdout.write('输入你选择文件的编号:');
 		}else{
-			stdin.pause();
-			fs.readFile(dirname+'/'+filename,'utf8', function (err,data){
-				console.log('\n'+data.replace(/(.*)/g,'		$1'));
-			});
+
+			//如果是选择的有的文件编号但是是文件夹，就将文件夹中的文件显示出来
+			if (stats[Number(data)].isDirectory) {
+				fs.readdir(dirname+'/'+filename,function(err,files){
+					console.log('\n');
+					console.log('('+files.length+'files)');
+					files.forEach(function(file){
+						console.log('文件:'+file);
+					});
+					
+				});
+			}else{
+				stdin.pause();
+				fs.readFile(dirname+'/'+filename,'utf8', function (err,data){
+					console.log('\n'+data.replace(/(.*)/g,'		$1'));
+				});
+			}
 		}
 	}
 
 	file(0);
 });
 
-};
 
 
 
