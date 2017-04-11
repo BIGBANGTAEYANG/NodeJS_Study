@@ -149,3 +149,8 @@ var simpleevent = new simpleEvent.EventEmitter();
 
 八,JavaScript部分注意点记录[飞机票](https://github.com/BIGBANGTAEYANG/NodeJS_Study/blob/master/Book/JavaScript%E6%A6%82%E8%BF%B0/JavaScript.md)
 
+九,NodeJs简单应用(不使用第三方模块)
+1.创建文件夹，创建一个简单的package.json文件;[代码详细]()<br>
+2.应用功能为查看目录的文件，输入相应的文件名，查看文件内容<br>
+3.具体步骤查看[NodeJs简单应用]();
+
