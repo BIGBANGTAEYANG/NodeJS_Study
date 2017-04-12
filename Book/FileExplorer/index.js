@@ -51,7 +51,7 @@ var stats = [];
 		}else{
 
 			//如果是选择的有的文件编号但是是文件夹，就将文件夹中的文件显示出来
-			if (stats[Number(data)].isDirectory) {
+			if (stats[Number(data)].isDirectory()) {
 				fs.readdir(dirname+'/'+filename,function(err,files){
 					console.log('\n');
 					console.log('('+files.length+'files)');
