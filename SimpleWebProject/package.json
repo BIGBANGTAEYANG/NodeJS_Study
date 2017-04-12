@@ -1,0 +1,17 @@
+{
+  "name": "web-project",
+  "version": "0.0.1",
+  "description": "An Http Server that processes froms",
+  "main": "server.js",
+  "dependencies": {},
+  "devDependencies": {},
+  "scripts": {
+    "test": "null"
+  },
+  "repository": {
+    "type": "git",
+    "url": "\u0016https://github.com/BIGBANGTAEYANG"
+  },
+  "author": "wq",
+  "license": "ISC"
+}
