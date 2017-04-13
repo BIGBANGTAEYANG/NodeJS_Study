@@ -12,7 +12,7 @@ NodeJS中间件之Connect
 		"connect":"1.8.7"
 	}
 }
-```<br>
+```
 2.使用npm全局安装Connect;<br>
 
 
