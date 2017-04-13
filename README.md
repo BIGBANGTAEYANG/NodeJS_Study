@@ -156,6 +156,6 @@ var simpleevent = new simpleEvent.EventEmitter();
 
 十、NodeJS中间件之Connect<br>
 1.Connect被定义为Node平台的中间件框架，从定位上看Connect一定是出众的，广泛兼容的，稳定的，基础的平台性框架。如果攻克Connect，会有助于我们更了解Node的世界。Express就是基于Connect开发的。<br>
-2.Connect详细讲解[链接]();
+2.Connect详细讲解[链接](https://github.com/BIGBANGTAEYANG/NodeJS_Study/tree/master/Book/Connect%E8%AF%A6%E7%BB%86);
 
 
