@@ -154,3 +154,8 @@ var simpleevent = new simpleEvent.EventEmitter();
 2.应用功能为查看目录的文件，输入相应的文件名，查看文件内容<br>
 3.具体步骤查看[NodeJs简单应用](https://github.com/BIGBANGTAEYANG/NodeJS_Study/edit/master/Book/FileExplorer/FileExplorer.md);
 
+十、NodeJS中间件之Connect<br>
+1.Connect被定义为Node平台的中间件框架，从定位上看Connect一定是出众的，广泛兼容的，稳定的，基础的平台性框架。如果攻克Connect，会有助于我们更了解Node的世界。Express就是基于Connect开发的。<br>
+2.Connect详细讲解[链接]();
+
+
